@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/home_page.dart';
+import 'package:flutter_learn/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,11 +25,15 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
+  List<Widget> pages = const [
+    HomePage(),
+    ProfilePage()
+  ];
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const HomePage(),
+      body: pages[currentPage],
       appBar: AppBar(
         title: const Text("Home page"),
       ),
